@@ -1,7 +1,11 @@
+
+// diff算法和key
+
+
 import React from 'react'
 
 class Item extends React.Component {
-  render () {
+  render() {
     return (
       <div>
         {this.props.value}
@@ -9,35 +13,35 @@ class Item extends React.Component {
     )
   }
 
-  componentWillUpdate (nextProps, nextState) {
+  componentWillUpdate(nextProps, nextState) {
     console.log(this.props.value, 'update')
   }
 
-  componentDidMount () {
+  componentDidMount() {
     console.log(this.props.value, 'mount')
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     console.log(this.props.value, 'unmount')
   }
 }
 
 class List extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       data: ['a', 'b', 'c', 'd']
     }
   }
-  render () {
+  render() {
     return (
       <div>
-        {this.state.data.map(item => <Item value={item} key={item}/>)}
+        {this.state.data.map(item => <Item value={item} key={item} />)}
       </div>
     )
   }
 
-  componentDidMount () {
+  componentDidMount() {
     window.list = this
   }
 

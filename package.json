@@ -35,7 +35,7 @@
       "/lib/ckeditor/",
       "tmp.js"
     ],
-    "fix":true
+    "fix": true
   },
   "devDependencies": {
     "standard": "^12.0.1"

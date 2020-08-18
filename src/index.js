@@ -1,11 +1,11 @@
-
-import React,{Component} from 'react'
+// diff算法和key
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 // import App from './demo2'
 import Filter from './filter'
 
-class Content extends Component{
-  render () {
+class Content extends Component {
+  render() {
     return (
       <div>
         content
@@ -17,8 +17,8 @@ class Content extends Component{
 
 }
 
-class Item extends Component{
-  render () {
+class Item extends Component {
+  render() {
     return (
       <div>
         {this.props.data}
@@ -26,44 +26,44 @@ class Item extends Component{
     )
   }
 
-  componentDidMount () {
-    console.log(this.props.data,'mount')
+  componentDidMount() {
+    console.log(this.props.data, 'mount')
   }
 
-  componentDidUpdate (prevProps, prevState) {
-    console.log(this.props.data,'update')
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.props.data, 'update')
   }
 
-  componentWillUnmount(){
-    console.log(this.props.data,'unmount')
+  componentWillUnmount() {
+    console.log(this.props.data, 'unmount')
   }
 }
 
-class List extends Component{
-  constructor (props) {
+class List extends Component {
+  constructor(props) {
     super(props)
     this.state = {
-      data : [
-        'a','b','c','d'
+      data: [
+        'a', 'b', 'c', 'd'
       ]
     }
   }
 
-  render () {
+  render() {
     return (
       <div>
-        {this.state.data.map(item =><Item key={item} data={item}/>)}
+        {this.state.data.map(item => <Item key={item} data={item} />)}
       </div>
     )
   }
 
-  componentDidMount () {
+  componentDidMount() {
     window.list = this
   }
 
 }
-var data = ['a','b','c','d']
-var data = ['b','c','d']
+var data = ['a', 'b', 'c', 'd']
+var data = ['b', 'c', 'd']
 
 /*
 no key
